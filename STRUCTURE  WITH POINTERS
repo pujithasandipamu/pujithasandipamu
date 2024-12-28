@@ -1,0 +1,24 @@
+#include<stdio.h>
+struct car
+{
+
+    int id;
+    char name[20];
+    char color[30];
+};
+int main()
+{
+
+    struct car c1;
+    struct car *ptr=&c1;
+    printf("enter the id");
+    scanf("%d",&ptr-> id);
+    printf("enter the name");
+    scanf(" %[^\n]",ptr-> name);
+    printf("enter the color");
+    scanf(" %[^\n]",ptr-> color);
+    printf("\n the car id is %d",ptr->id);
+    printf("\n the car name is %s",ptr->name);
+    printf("\n the car color is %s",ptr->color);
+    return 0;
+}
