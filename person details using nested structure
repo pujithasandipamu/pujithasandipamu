@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Person
+{
+	  char aadharnumber[20];
+	  char name[20];
+	  int age;
+	  struct Address
+	  {
+	  	   char dono[30];
+	  	   char street[30];
+	  	   char city[40];
+	  	   char state[50];
+	  	   int pincode;
+	  } address;
+	  char phone[10];
+};
+void addPerson(struct Person *p);
+void displayPerson(struct Person *p);
+
+int main()
+{
+	struct Person *p;
+	p = (struct Person *) malloc(sizeof(struct Person) * 1);
+	addPerson(p);
+	displayPerson(p);
+	return 0;
+}
+
+void addPerson(struct Person *p)
+{
+	printf("Enter the aadharnumber");
+	scanf(" %[^\n]",p->aadharnumber);
+	printf("Enter the name");
+	scanf(" %[^\n]",p->name);
+	printf("Enter the age");
+	scanf("%d",&p->age);
+    printf("Enter the door number");
+	scanf(" %[^\n]",p->address.dono);
+	printf("Enter the street name");
+	scanf(" %[^\n]",p->address.street);
+	printf("Enter the city name");
+	scanf(" %[^\n]",p->address.city);
+	printf("Enter the state name");
+	scanf(" %[^\n]",p->address.state);
+	printf("Enter the pincode");
+	scanf("%d",&p->address.pincode);
+	printf("Ente the phone number");
+	scanf(" %[^\n]",p->phone);
+}
+void displayPerson(struct Person *p)
+{
+//	printf("Display details");
+printf("%s %s %d %s %s %s %s %d %s",p->aadharnumber,p->name,p->age,
+p->address.dono,p->address.street,p->address.city,p->address.state,
+p->address.pincode,p->phone);
+}
